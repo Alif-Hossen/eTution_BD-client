@@ -2,7 +2,7 @@ import React from 'react';
 import loginImg from "../../assets/loginImg.png"
 const Login = () => {
     return (
-        <div className='flex justify-between max-w-[1400px] mx-4 my-20 '>
+        <div className='flex justify-between max-w-[1400px] mx-auto my-20 '>
             <div>
                 <img className='max-w-[900px] max-h-[500px] mx-4 ' src={loginImg} alt="" />
             </div>

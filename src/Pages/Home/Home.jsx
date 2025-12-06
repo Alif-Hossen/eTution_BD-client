@@ -1,10 +1,14 @@
 import React from 'react';
+import FindAcademicTutor from '../../Components/FindAcademicTutor';
+import Faq from '../../Components/Faq';
 
 const Home = () => {
     return (
         <div>
-            <h1>Hello From Home</h1>
             
+            <FindAcademicTutor></FindAcademicTutor>
+            <Faq></Faq>
+
         </div>
     );
 };
