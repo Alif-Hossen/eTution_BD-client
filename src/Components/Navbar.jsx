@@ -1,16 +1,47 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const Navbar = () => {
 
 
     const links = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+
+        <li className=''>
+            <NavLink to="/"
+                className={({ isActive }) =>
+                    isActive ? 'nav-link active' : 'nav-link'
+                }>
+                Home
+            </NavLink>
+        </li>
+        {/* <li>
+            <NavLink to=""
+                className={({isActive}) => 
+                    isActive ? 'nav-link active' : 'nav-link'
+                }>
+                    Subjects
+            </NavLink>
+        </li> */}
+        <li>
+            <NavLink to="aboutUs"
+                className={({ isActive }) =>
+                    isActive ? 'nav-link active' : 'nav-link'
+                }>
+                About Us
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="">Privacy Policy</NavLink>
+        </li>
+        <li>
+            <NavLink to="">Terms And Condition</NavLink>
+        </li>
+        {/* <li><NavLink></NavLink></li> */}
     </>
 
 
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="text-black navbar bg-white my-4 max-w-[1400px] rounded-3xl mx-auto shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -18,7 +49,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
@@ -26,11 +57,11 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    { }
+                    {links}
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <NavLink to="login" className="btn text-black hover:text-yellow-500 border-none rounded-3xl px-8 secondary">Login</NavLink>
             </div>
         </div>
     );

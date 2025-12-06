@@ -5,5 +5,53 @@
 @plugin "daisyui";
 @import "tailwindcss";
 
+.primary{
+    color:#152A24
+}
+.secondary{
+    background-color:  #BCE955;
+}
+
+.body{
+    color: #41574A;
+}
+
+.stroke{
+    color: #E5E5E5;
+}
+
+.stroke2{
+    color: #F6F6F6;
+}
+
+.lightBg{
+    color: #FAFAFA;
+}
+
+.lightBg1{
+    color: #1F462D;
+}
+
+
+
+.nav-link {
+  text-decoration: none; 
+  color: #333; 
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-link.active {
+  color: #007bff; 
+  text-decoration: underline; 
+  font-weight: bold;
+}
+
+/* .nav-link:hover {
+  opacity: 0.8;
+} */
+
+
+
 
 
