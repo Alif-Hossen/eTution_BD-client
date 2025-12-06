@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import AccordionItem from './AccordionItem';
 import FAQ from "../assets/FAQ.png"
@@ -74,7 +72,7 @@ const Faq = () => {
     };
 
     const getButtonClasses = (tabName) => {
-        const baseClasses = 'px-6 py-2 rounded-full font-medium transition duration-200 shadow-md whitespace-nowrap';
+        const baseClasses = 'px-5 py-1.5 rounded-full font-medium transition duration-200 shadow-md whitespace-nowrap text-base'; 
 
         if (activeTab === tabName) {
             return `${baseClasses} bg-[#BCE955] text-black hover:bg-green-700`;
@@ -85,22 +83,23 @@ const Faq = () => {
 
 
     return (
-        <div className='max-w-[1400px] mx-auto bg-[#41574A] rounded-2xl my-10 px-4 sm:px-6 lg:px-8 py-12'>
-            <div className='lg:grid lg:grid-cols-2 lg:gap-10 items-center flex flex-col'> 
+        <div className='max-w-[1400px] mx-auto bg-[#41574A] rounded-2xl my-8 px-4 sm:px-6 lg:px-8 py-3'> 
+            <div className='lg:grid lg:grid-cols-2 lg:gap-6 items-center flex flex-col'> 
                 
-                <div className='order-1 lg:order-2 w-full mb-8 lg:mb-0'> 
+
+                <div className='order-1 lg:order-2 w-full mb-2 lg:mb-0'> 
                     <img className='w-full h-auto rounded-xl shadow-2xl' src={FAQ} alt="Frequently Asked Questions Illustration" />
                 </div>
                 
                 <div className='order-2 lg:order-1 text-white'>
-                    <h1 className='text-4xl sm:text-5xl font-extrabold mb-4'>
+                    <h1 className='text-3xl sm:text-4xl font-extrabold mb-1'> 
                         Frequently Asked Questions
                     </h1>
-                    <p className='text-lg sm:text-xl text-gray-300 max-w-2xl mb-10'>
+                    <p className='text-base sm:text-lg text-gray-300 max-w-2xl mb-3'> 
                         Everything you need to know about the product and billing. Can’t find the answer you’re looking for? Please chat to our friendly team.
                     </p>
 
-                    <div className='flex flex-wrap justify-start gap-4 mb-10'>
+                    <div className='flex flex-wrap justify-start gap-3 mb-4'> 
                         <button
                             onClick={() => handleTabChange('Tutor')}
                             className={getButtonClasses('Tutor')}
@@ -116,7 +115,7 @@ const Faq = () => {
                         </button>
                     </div>
 
-                    <div className='space-y-4'>
+                    <div className='space-y-1'>
                         {currentFaq.map((item, index) => (
                             <AccordionItem
                                 key={index}
