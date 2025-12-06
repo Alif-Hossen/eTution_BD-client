@@ -1,5 +1,6 @@
 import React from 'react';
 import loginImg from "../../assets/loginImg.png"
+import { NavLink } from 'react-router';
 const Login = () => {
     return (
         <div className='flex justify-between max-w-[1400px] mx-auto my-20 '>
@@ -49,9 +50,9 @@ const Login = () => {
                 {/* Signup Link */}
                 <p className="text-center mt-5 text-gray-700">
                     Don’t have an account?{" "}
-                    <a href="#" className="text-lime-600 font-semibold hover:underline">
-                        Sign Up
-                    </a>
+                    <NavLink to="/register" className="text-lime-600 font-semibold hover:underline">
+                        Register
+                    </NavLink>
                 </p>
             </div>
         </div>

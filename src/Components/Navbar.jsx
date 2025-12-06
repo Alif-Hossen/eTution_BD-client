@@ -14,14 +14,6 @@ const Navbar = () => {
                 Home
             </NavLink>
         </li>
-        {/* <li>
-            <NavLink to=""
-                className={({isActive}) => 
-                    isActive ? 'nav-link active' : 'nav-link'
-                }>
-                    Subjects
-            </NavLink>
-        </li> */}
         <li>
             <NavLink to="aboutUs"
                 className={({ isActive }) =>
@@ -41,7 +33,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="text-black navbar bg-white my-4 max-w-[1400px] rounded-3xl mx-auto shadow-sm">
+        <div className="text-white navbar bg-[#1F462D] my-4 max-w-[1400px] rounded-3xl mx-auto shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
