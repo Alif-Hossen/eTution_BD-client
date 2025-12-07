@@ -12,6 +12,17 @@ const Register = () => {
 
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Welcome Back</h2>
 
+                {/* Name */}
+                <div className="mb-4">
+                    <label className="text-gray-700 font-medium">Name</label>
+                    <input
+                        type="text"
+                        placeholder="John Wick"
+                        className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
+                      focus:ring-lime-400 outline-none transition"
+                    />
+                </div>
+
                 {/* Email */}
                 <div className="mb-4">
                     <label className="text-gray-700 font-medium">Email</label>
@@ -32,6 +43,22 @@ const Register = () => {
                         className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
                       focus:ring-lime-400 outline-none transition"
                     />
+                </div>
+
+                {/* Role Selection */}
+                <div className="mb-4">
+                    <label className="text-gray-700 font-medium">Role Selection</label>
+                    <select className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
+                      focus:ring-lime-400 outline-none transition" name="" id="">
+                        <option value="Student">Student</option>
+                        <option value="Tutor">Tutor</option>
+                    </select>
+                    {/* <input
+                        type="text"
+                        placeholder="Student/Tutor"
+                        className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 
+                      focus:ring-lime-400 outline-none transition"
+                    /> */}
                 </div>
 
                 {/* Forgot Password */}

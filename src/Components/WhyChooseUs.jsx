@@ -1,4 +1,6 @@
 import React from 'react';
+import whyChoose from "../assets/whyChoose.png"
+
 
 const WhyChooseUs = () => {
     return (
@@ -7,7 +9,10 @@ const WhyChooseUs = () => {
                 <h1 className='text-4xl text-center'>Why Choose Us</h1>
                 <h3 className='text-3xl text-center pb-8'>We intend to expand <span>Excellent</span> education.</h3>
             </div>
-            <div className='flex gap-4'>
+            <div className='flex gap-4 justify-around'>
+                <div>
+                    <img className=' h-[400px] w-[400px] ' src={whyChoose} alt="" />
+                </div>
                 <div className='grid grid-cols-2 gap-8'>
                     <div className='bg-white rounded-2xl'>
                         <img src="" alt="" />
@@ -25,9 +30,6 @@ const WhyChooseUs = () => {
                         <img src="" alt="" />
                         <h3 className='text-black text-xl px-8 py-4 '>Better Than Others</h3>
                     </div>
-                </div>
-                <div>
-                    <img src="" alt="" />
                 </div>
             </div>
         </div>
