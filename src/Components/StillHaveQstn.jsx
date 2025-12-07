@@ -6,7 +6,7 @@ import userThree from "../assets/user3.avif"
 
 const StillHaveQstn = () => {
     return (
-        <div className='max-w-[1400px] mx-auto my-8 bg-[#1F462D] py-8 rounded-2xl'>
+        <div className='max-w-[1400px] mx-auto my-8 bg-[#41574A] py-8 rounded-2xl'>
             <div className='flex justify-center items-center'>
                 <img className='w-[70px] h-[70px] rounded-full' src={userOne} alt="" />
                 <img className='w-[90px] h-[90px] rounded-full -mx-4 z-10 border-2 border-white' src={userTwo} alt="" />
