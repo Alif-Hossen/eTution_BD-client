@@ -6,11 +6,13 @@ import TuitionType from '../../Components/TuitionType';
 import TheWayTutorsCanConnect from '../../Components/TheWayTutorsCanConnect';
 import WhyChooseUs from '../../Components/WhyChooseUs';
 import TheWaysParentCon from '../../Components/TheWaysParentCon';
+import Hero from '../../Components/Hero';
 
 const Home = () => {
     return (
         <div>
             
+            <Hero></Hero>
             <TuitionType></TuitionType>
             <FindAcademicTutor></FindAcademicTutor>
             <TheWaysParentCon></TheWaysParentCon>
