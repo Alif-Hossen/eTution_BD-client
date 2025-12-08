@@ -1,12 +1,13 @@
 import React from 'react';
 import loginImg from "../../assets/loginImg.png"
 import { NavLink } from 'react-router';
+import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
     return (
-        <div className='flex justify-between max-w-[1400px] mx-auto my-20'>
+        <div className='xl:flex justify-between max-w-[1400px] mx-auto my-20'>
             <div>
-                <img className='max-w-[900px] max-h-[500px] mx-4' src={loginImg} alt="" />
+                <img className='xl:max-w-[900px] max-w-[400px] xl:max-h-[700px] mx-4' src={loginImg} alt="" />
             </div>
 
             <div className="w-full md:w-1/2 bg-white shadow-xl p-8 rounded-2xl border border-gray-200">
@@ -61,24 +62,22 @@ const Register = () => {
                     <label className="text-gray-700 font-medium">Phone</label>
                     <input
                         type="text"
-                        placeholder="+880 1613151416"
+                        placeholder="+880 1513151416"
                         className="w-full mt-1 px-4 py-3 border border-gray-400 rounded-xl
                         placeholder-gray-600 text-black focus:ring-2 focus:ring-lime-400 outline-none transition"
                     />
                 </div>
 
-                {/* Forgot Password */}
-                <div className="text-right mb-4">
-                    <a href="#" className="text-sm text-lime-600 hover:underline">
-                        Forgot password?
-                    </a>
-                </div>
+                <button className="w-full rounded-2xl my-4 btn bg-white text-black border-[#e5e5e5]">
+                    <FcGoogle />
+                    Login with Google
+                </button>
 
                 {/* Login Button */}
                 <button
-                    className="w-full bg-gradient-to-r from-lime-300 to-lime-500 text-black font-semibold 
+                    className="w-full bg-[#BCE955] text-black font-semibold 
                     py-3 rounded-xl shadow hover:opacity-90 transition">
-                    Login
+                    Register
                 </button>
 
                 {/* Signup Link */}
