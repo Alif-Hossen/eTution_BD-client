@@ -8,6 +8,7 @@ import WhyChooseUs from '../../Components/WhyChooseUs';
 import TheWaysParentCon from '../../Components/TheWaysParentCon';
 import Hero from '../../Components/Hero';
 import HowItWorks from '../../Components/HowItWorks';
+import WeFeaturedOn from '../../Components/WeFeaturedOn';
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
             <WhyChooseUs></WhyChooseUs>
             <Faq></Faq>
             <StillHaveQstn></StillHaveQstn>
+            <WeFeaturedOn></WeFeaturedOn>
 
         </div>
     );
