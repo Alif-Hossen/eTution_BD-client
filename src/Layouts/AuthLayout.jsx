@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from '../Shared/Navbar';
 import { Outlet } from 'react-router';
-import Footer from '../Shared/Footer';
+import Navbar from '../Pages/Shared/Navbar';
+import Footer from '../Pages/Shared/Footer';
 
-const Root = () => {
+const AuthLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
@@ -13,4 +13,4 @@ const Root = () => {
     );
 };
 
-export default Root;
+export default AuthLayout;
