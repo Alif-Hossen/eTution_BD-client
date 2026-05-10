@@ -9,54 +9,10 @@ import RootLayout from "../Layouts/RootLayout";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import { createBrowserRouter } from "react-router-dom";
+import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
+import TermsAndCondition from "../Pages/TermsAndCondition/TermsAndCondition";
 
-// const router = createBrowserRouter([
-//     {
-//         path: "/",
-//         element: <RootLayout></RootLayout>,
-//         errorElement: <ErrorPage></ErrorPage>,
-//         children: [
-//             {
-//                 index: true,
-//                 element: <Home></Home>
-//             },
-//             {
-//                 path: "aboutUs",
-//                 element: <AboutUs></AboutUs>
-//             },
-//             {
 
-//                 path: "tuitions",
-//                 element: <Tuitions></Tuitions>
-//             },
-//             {
-//                 path: "tutors",
-//                 element: <Tutors></Tutors> 
-//             },
-//             {
-//                 path: "contact",
-//                 element: <Contact></Contact>
-//             }
-
-//         ]
-//     },
-//     {
-//         path: "/",
-//         element: <AuthLayout></AuthLayout>,
-//         children: [
-//             {
-//                 path: "login",
-//                 element: <Login></Login>
-//             },
-//             {
-//                 path: "register",
-//                 element: <Register></Register>
-//             }
-//         ]
-//     }
-    
-
-// ])
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,6 +39,14 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact></Contact>,
       },
+      {
+        path: "privacy-policy",
+        element: <PrivacyPolicy></PrivacyPolicy>
+      },
+      {
+        path: "terms-and-conditions",
+        element: <TermsAndCondition></TermsAndCondition>
+      }
     ],
   },
   {

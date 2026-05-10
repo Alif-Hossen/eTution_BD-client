@@ -45,8 +45,24 @@ const Navbar = () => {
                 Contact
             </NavLink>
         </li>
-        <li><NavLink to="">Privacy Policy</NavLink></li>
-        <li><NavLink to="">Terms And Condition</NavLink></li>
+
+        <li>
+            <NavLink to="privacy-policy"
+                className={({ isActive }) =>
+                    isActive ? 'nav-link active' : 'nav-link'
+                }>
+                Privacy Policy
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="terms-and-conditions"
+                className={({ isActive }) =>
+                    isActive ? 'nav-link active' : 'nav-link'
+                }>
+                Terms And Condition
+            </NavLink>
+        </li>
+
     </>
 
     return (
