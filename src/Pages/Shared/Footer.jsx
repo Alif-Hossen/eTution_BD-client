@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import logo from "../../assets/logo.png";
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -44,8 +45,8 @@ const Footer = () => {
                 <div>
                     <h2 className="text-xl font-bold mb-3">Contact Information</h2>
                     <ul className="space-y-2 text-gray-200">
-                        <li>Email: support@etuitionbd.com</li>
-                        <li>Phone: +880 1234-567890</li>
+                        <Link>Email: naimuralif1.0@gmail.com</Link>
+                        <li>Phone: +880 01613151456</li>
                         <li>Address: Dhaka, Bangladesh</li>
                     </ul>
                 </div>

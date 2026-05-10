@@ -10,24 +10,23 @@ import TheWaysParentCon from '../TheWaysParentCon';
 import TuitionType from '../TuitionType';
 import WeFeaturedOn from '../WeFeaturedOn';
 import WhyChooseUs from '../WhyChooseUs';
+import ExtraOne from '../ExtraOne';
 
 const Home = () => {
     return (
         <div>
             <Hero></Hero>
-            {/* <AccordionItem></AccordionItem> */}
-            
             <FindAcademicTutor></FindAcademicTutor>
-            
             <HowItWorks></HowItWorks>
-            
             <TheWayTutorsCanConnect></TheWayTutorsCanConnect>
             <TheWaysParentCon></TheWaysParentCon>
             <TuitionType></TuitionType>
             <WhyChooseUs></WhyChooseUs>
+            <ExtraOne></ExtraOne>
             <Faq></Faq>
-            <WeFeaturedOn></WeFeaturedOn>
             <StillHaveQstn></StillHaveQstn>
+            <WeFeaturedOn></WeFeaturedOn>
+            
         </div>
     );
 };
