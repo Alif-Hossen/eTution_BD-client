@@ -12,6 +12,8 @@ import { createBrowserRouter } from "react-router-dom";
 import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsAndCondition from "../Pages/TermsAndCondition/TermsAndCondition";
 import LearnMore from "../Components/LearMore";
+import BeATutor from "../Pages/BeATutor/BeATutor";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -51,7 +53,14 @@ const router = createBrowserRouter([
       {
         path: "learn-more",
         element: <LearnMore></LearnMore>
+      },
+      {
+        path: "become-tutor",
+        element: <PrivateRoute>
+          <BeATutor></BeATutor>
+        </PrivateRoute>
       }
+      
     ],
   },
   {

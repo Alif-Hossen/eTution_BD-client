@@ -79,7 +79,8 @@ const Login = () => {
             </div>
 
             <div className="w-full lg:w-1/2 bg-white shadow-xl p-8 rounded-2xl border border-gray-100">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Welcome Back.!</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-2 text-center">Welcome Back.!</h2>
+                <h2 className="text-xl font-semibold text-gray-800 mb-6 text-center">Please Login</h2>
 
                 <div className="flex gap-4 justify-around mb-8 p-4 bg-gray-50 rounded-lg">
                     <RoleCard selectedRole={role} currentRole="Tutor" icon={User} title="Tutor" setRole={setRole} />

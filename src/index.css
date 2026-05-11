@@ -1,25 +1,4 @@
 
-/* FOR DARK MODE TOGGLE */
-
-/* @import "tailwindcss";
-
-:root {
-  --primary-color: #152A24;
-  --secondary-color: #BCE955;
-  --body-text: #41574A;
-  --stroke-color: #E5E5E5;
-}
-
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.primary { color: var(--primary-color); }
-.secondary { background-color: var(--secondary-color); }
-.body-text { color: var(--body-text); }
-.stroke { color: var(--stroke-color); } */
-
-/* --------- */
 
 
 @plugin "daisyui";

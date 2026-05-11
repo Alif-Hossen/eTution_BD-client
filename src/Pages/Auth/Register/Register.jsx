@@ -50,7 +50,7 @@ const Register = () => {
             setError("roleSelection", { type: "manual", message: "Please select your role (Tutor or Student)" });
             return;
         }
-    
+
 
         clearErrors("roleSelection");
 
@@ -79,6 +79,26 @@ const Register = () => {
 
         console.log("After Register-Registration Data:", registrationData);
 
+    };
+
+    const { signInWithGoogle } = UseAuth();
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Google Sign-In Successful as ${role}!`,
+                    showConfirmButton: false,
+                    timer: 2000,
+                    toast: true,
+                });
+            })
+            .catch(error => {
+                console.error("Google Sign-In Error:", error);
+            });
     };
 
     return (
@@ -158,7 +178,9 @@ const Register = () => {
                     </div>
 
                     {/* Google Login Button */}
-                    <button type="button" className="w-full rounded-2xl my-4 flex items-center justify-center space-x-2 bg-white text-black py-3 border border-gray-300 shadow-sm hover:bg-gray-50 transition">
+                    <button
+                        onClick={handleGoogleSignIn}
+                        type="button" className="w-full rounded-2xl my-4 flex items-center justify-center space-x-2 bg-white text-black py-3 border border-gray-300 shadow-sm hover:bg-gray-50 transition">
                         <FcGoogle className="text-xl" />
                         <span className="font-semibold">Sign Up with Google</span>
                     </button>
