@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, FileText, Lock, User, Scale, AlertCircle } from 'lucide-react';
+import Swal from 'sweetalert2';
 
 const TermsAndConditions = () => {
     const sections = [
@@ -25,11 +26,23 @@ const TermsAndConditions = () => {
         }
     ];
 
+    const handleUnderstandAndAccept = () => {
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: 'Thank You ',
+            showConfirmButton: false,
+            timer: 2000,
+            toast: true,
+        });
+    }
+
+
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-slate-950 transition-colors duration-300 py-10">
             {/* Main Wrapper with Max-Width 1400px */}
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Minimal Header Section */}
                 <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-800 mb-8 py-12 px-6 text-center transition-all">
                     <ShieldCheck className="w-16 h-16 text-lime-500 mx-auto mb-4" />
@@ -73,7 +86,7 @@ const TermsAndConditions = () => {
                     <p className="text-black mb-8 max-w-2xl mx-auto text-lg">
                         By using the eTuitionBD platform, you agree to abide by these terms. This ensures a safe and effective learning environment for everyone.
                     </p>
-                    <button className="bg-black hover:bg-gray-100 text-lime-600 font-bold py-4 px-14 rounded-full transition-all shadow-md hover:shadow-xl hover:scale-105 active:scale-95 text-lg">
+                    <button onClick={handleUnderstandAndAccept} className="bg-black hover:bg-gray-100 text-lime-600 font-bold py-4 px-14 rounded-full transition-all shadow-md hover:shadow-xl hover:scale-105 active:scale-95 text-lg">
                         I Understand & Accept
                     </button>
                 </div>

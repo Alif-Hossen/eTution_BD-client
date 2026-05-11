@@ -3,6 +3,7 @@ import React from 'react';
 import userOne from "../../assets/user1.avif"
 import userTwo from "../../assets/user2.avif"
 import userThree from "../../assets/user3.avif"
+import { NavLink } from 'react-router';
 
 const StillHaveQstn = () => {
     return (
@@ -19,7 +20,7 @@ const StillHaveQstn = () => {
                 </p>
             </div>
             <div className='flex justify-center my-4'>
-                <button className='btn secondary text-black border-none rounded-2xl'>Get In Touch</button>
+                <NavLink to="/contact" className='btn secondary text-black border-none rounded-2xl'>Get In Touch</NavLink>
             </div>
         </div>
     );

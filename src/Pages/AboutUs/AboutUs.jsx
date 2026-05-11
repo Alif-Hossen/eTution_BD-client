@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Users, Heart, Award, CheckCircle2, ArrowRight } from 'lucide-react';
+import { NavLink } from 'react-router';
 
 const AboutUs = () => {
     return (
@@ -64,9 +65,9 @@ const AboutUs = () => {
                         <Award className="w-12 h-12 text-black mb-6" />
                         <h3 className="text-2xl font-black text-black mb-4">Why eTuitionBD?</h3>
                         <p className="text-black/80 font-medium mb-6">We don't just find tutors; we build relationships that foster academic and personal growth.</p>
-                        <button className="flex items-center gap-2 font-bold text-black border-b-2 border-black w-fit hover:gap-4 transition-all">
+                        <NavLink to="/tutors" className="flex items-center gap-2 font-bold text-black border-b-2 border-black w-fit hover:gap-4 transition-all">
                             Join Our Team <ArrowRight className="w-5 h-5" />
-                        </button>
+                        </NavLink>
                     </div>
                 </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Lock, Eye, Database, ShieldAlert, Bell, Globe } from 'lucide-react';
+import { NavLink } from 'react-router';
 
 const PrivacyPolicy = () => {
     const policies = [
@@ -74,9 +75,9 @@ const PrivacyPolicy = () => {
                         <p className="text-black/80 mb-6 font-medium">
                             If you have any concerns regarding your privacy, our support team is here to help.
                         </p>
-                        <button className="bg-black text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                        <NavLink to="/contact" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform">
                             Contact Support
-                        </button>
+                        </NavLink>
                     </div>
                 </div>
 

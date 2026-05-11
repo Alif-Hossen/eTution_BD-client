@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImg from "../../assets/heroo.png";
+import { NavLink } from 'react-router';
 
 const Hero = () => {
     return (
@@ -20,12 +21,12 @@ const Hero = () => {
                     </p>
 
                     <div className='mt-6 flex flex-col sm:flex-row gap-4'>
-                        <button className='btn secondary border-none rounded-2xl text-black px-5 py-2.5 font-medium hover:bg-gray-300 transition'>
+                        <NavLink to="/contact" className='btn secondary border-none rounded-2xl text-black px-5 py-2.5 font-medium hover:bg-gray-300 transition'>
                             Get In Touch
-                        </button>
-                        <button className='btn primary border-none rounded-2xl text-white bg-blue-600 px-5 py-2.5 font-medium hover:bg-blue-700 transition'>
+                        </NavLink>
+                        <NavLink to="/learn-more" className='btn primary border-none rounded-2xl text-white bg-blue-600 px-5 py-2.5 font-medium hover:bg-blue-700 transition'>
                             Learn More
-                        </button>
+                        </NavLink>
                     </div>
                 </div>
 

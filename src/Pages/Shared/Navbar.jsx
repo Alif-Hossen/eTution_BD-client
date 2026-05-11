@@ -14,19 +14,19 @@ const Navbar = () => {
             </NavLink>
         </li>
         <li>
-            <NavLink to="tuitions"
-                className={({ isActive }) =>
-                    isActive ? 'nav-link active' : 'nav-link'
-                }>
-                Tuitions
-            </NavLink>
-        </li>
-        <li>
             <NavLink to="tutors"
                 className={({ isActive }) =>
                     isActive ? 'nav-link active' : 'nav-link'
                 }>
                 Tutors
+            </NavLink>
+        </li>
+        <li>
+            <NavLink to="tuitions"
+                className={({ isActive }) =>
+                    isActive ? 'nav-link active' : 'nav-link'
+                }>
+                Tuitions
             </NavLink>
         </li>
         <li>

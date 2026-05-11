@@ -1,6 +1,6 @@
 {import('tailwindcss').Config} 
 export default {
-  darkMode: 'class', // এটিই ডার্ক মোড চালু করবে
+  darkMode: 'class', 
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#BCE955', // তোমার প্রিয় লাইম কালারটি এখানে সেভ করে দিলাম
+        primary: '#BCE955', 
       },
     },
   },

@@ -11,6 +11,7 @@ import Home from "../Pages/Home/Home/Home";
 import { createBrowserRouter } from "react-router-dom";
 import PrivacyPolicy from "../Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsAndCondition from "../Pages/TermsAndCondition/TermsAndCondition";
+import LearnMore from "../Components/LearMore";
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "terms-and-conditions",
         element: <TermsAndCondition></TermsAndCondition>
+      },
+      {
+        path: "learn-more",
+        element: <LearnMore></LearnMore>
       }
     ],
   },
