@@ -5,16 +5,16 @@ import UseAuth from '../../Hooks/UseAuth';
 
 const Navbar = () => {
 
-    const {user, logOutUser} = UseAuth();
+    const { user, logOutUser } = UseAuth();
 
     const handleLogout = () => {
         logOutUser()
-        .then(() => {   
-            console.log("Logged out successfully");
-        })
-        .catch(error => {
-            console.error("Logout Error:", error);
-        });
+            .then(() => {
+                console.log("Logged out successfully");
+            })
+            .catch(error => {
+                console.error("Logout Error:", error);
+            });
     };
 
     const links = <>
@@ -42,6 +42,13 @@ const Navbar = () => {
                 Tuitions
             </NavLink>
         </li>
+
+        <li>
+            <NavLink to="post-tuition" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                Post Tuitions
+            </NavLink>
+        </li>
+
         <li>
             <NavLink to="aboutUs"
                 className={({ isActive }) =>
@@ -118,13 +125,13 @@ const Navbar = () => {
 
             <div className="navbar-end">
                 {
-                    user ? 
+                    user ?
 
-                    <NavLink 
-                        onClick={handleLogout}
-                    to="/login" className="btn text-black  border-none rounded-3xl px-8 secondary">Log out</NavLink>
-                     : 
-                    <NavLink to="/login" className="btn text-black  border-none rounded-3xl px-8 secondary">Login</NavLink>
+                        <NavLink
+                            onClick={handleLogout}
+                            to="/login" className="btn text-black  border-none rounded-3xl px-8 secondary">Log out</NavLink>
+                        :
+                        <NavLink to="/login" className="btn text-black  border-none rounded-3xl px-8 secondary">Login</NavLink>
                 }
 
                 <Link to="/become-tutor" className="btn font-semibold text-black border-none rounded-3xl mx-2 px-8 bg-blue-600">Be a Tutor</Link>

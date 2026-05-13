@@ -14,6 +14,8 @@ import TermsAndCondition from "../Pages/TermsAndCondition/TermsAndCondition";
 import LearnMore from "../Components/LearMore";
 import BeATutor from "../Pages/BeATutor/BeATutor";
 import PrivateRoute from "./PrivateRoute";
+import PostTuitionForm from "../Pages/PostTuition/PostTuition";
+import PostTuition from "../Pages/PostTuition/PostTuition";
 
 
 const router = createBrowserRouter([
@@ -59,6 +61,10 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <BeATutor></BeATutor>
         </PrivateRoute>
+      },
+      {
+        path: "post-tuition",
+        element: <PostTuition></PostTuition>
       }
       
     ],
