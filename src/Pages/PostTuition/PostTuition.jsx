@@ -1,12 +1,39 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import postTuitionImg from "../../assets/postTuition.png";
+import Swal from 'sweetalert2';
+import UseAxiosSecure from '../../Hooks/UseAxiosSecure';
+import UseAuth from '../../Hooks/UseAuth';
 // import { data } from 'react-router';
 
 const PostTuition = () => {
     const { register, handleSubmit, reset } = useForm();
 
+    const axiosSecure = UseAxiosSecure();
+    const { user } = UseAuth();
+
     const onSubmit = (data) => {
+        Swal.fire({
+            title: 'Tuition Posted Successfully!',
+            text: 'Your tuition request has been posted. Tutors will contact you soon.',
+            background: '#1e293b',
+            color: '#fff',
+        });
+
+        // SAVE TUITIONS TO DATABASE --> 
+        axiosSecure.post("/tuitions", data)
+            .then(response => {
+                console.log("Tuition posted successfully:", response.data);
+            })
+            .catch(error => {
+                console.error("Error posting tuition:", error);
+                Swal.fire({
+                    title: 'Error',
+                    text: 'There was an error posting your tuition. Please try again later.',
+                    icon: 'error'
+                });
+            });
+
         console.log("Tuition Data:", data);
         reset();
     };
@@ -14,19 +41,19 @@ const PostTuition = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-white dark:bg-[#020617]">
-            {/* Main Container: Mobile এ Column (Image first), Desktop এ Row (Form first) */}
+
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-6xl w-full">
-                
-                {/* Image Section: মোবাইলে উপরে, ডেস্কটপে ডানে (Order-1 on Mobile, Order-2 on Desktop) */}
+
+
                 <div className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
-                    <img 
-                        src={postTuitionImg} 
-                        alt="Post Tuition" 
+                    <img
+                        src={postTuitionImg}
+                        alt="Post Tuition"
                         className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[550px] h-auto object-contain"
                     />
                 </div>
 
-                {/* Form Section: মোবাইলে নিচে, ডেস্কটপে বামে (Order-2 on Mobile, Order-1 on Desktop) */}
+
                 <div className="w-full lg:w-1/2 order-2 lg:order-1">
                     <div className="bg-white dark:bg-slate-900 p-6 md:p-10 rounded-[40px] border border-slate-200 dark:border-slate-800 shadow-2xl shadow-[#BCE955]/5">
                         <h2 className="text-3xl md:text-4xl font-black mb-8 text-slate-800 dark:text-white leading-tight">
@@ -35,6 +62,31 @@ const PostTuition = () => {
                         </h2>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+
+
+                            {/* Name & Email - Row */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Name</label>
+                                    <input
+                                        {...register("name", { required: true })}
+                                        placeholder="e.g. John Doe"
+                                        defaultValue={user?.displayName}
+                                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-[#BCE955] transition-all outline-none text-sm"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Email</label>
+                                    <input
+                                        {...register("email", { required: true })}
+                                        placeholder="e.g. john.doe@example.com"
+                                        defaultValue={user?.email}
+                                        className="w-full px-5 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-[#BCE955] transition-all outline-none text-sm"
+                                    />
+                                </div>
+                            </div>
+
+
                             {/* Class & Subject - Row */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>

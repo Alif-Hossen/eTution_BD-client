@@ -43,12 +43,20 @@ const Navbar = () => {
             </NavLink>
         </li>
 
+
+        {/* BLA BLA  */}
         <li>
             <NavLink to="post-tuition" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                 Post Tuitions
             </NavLink>
         </li>
-
+        <li>
+            <NavLink to="be-a-tutor" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                Be A Tutor
+            </NavLink>
+        </li>
+        
+        
         <li>
             <NavLink to="aboutUs"
                 className={({ isActive }) =>
@@ -83,7 +91,15 @@ const Navbar = () => {
             </NavLink>
         </li>
 
-    </>
+        {
+            user && <li>
+                <NavLink to="dashboard/my-tuitions"
+                    className={({ isActive }) =>                isActive ? 'nav-link active' : 'nav-link'       }>  
+                     My Tuitions    </NavLink>
+            </li>
+        }
+
+    </>;
 
     return (
         <div className="

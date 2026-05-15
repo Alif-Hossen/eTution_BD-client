@@ -16,6 +16,8 @@ import BeATutor from "../Pages/BeATutor/BeATutor";
 import PrivateRoute from "./PrivateRoute";
 import PostTuitionForm from "../Pages/PostTuition/PostTuition";
 import PostTuition from "../Pages/PostTuition/PostTuition";
+import MyTuitions from "../Pages/Dashboard/MyTuition/MyTuitions";
+import DashboardLayout from "../Layouts/DashboardLayout";
 
 
 const router = createBrowserRouter([
@@ -62,9 +64,15 @@ const router = createBrowserRouter([
           <BeATutor></BeATutor>
         </PrivateRoute>
       },
+
+
       {
         path: "post-tuition",
         element: <PostTuition></PostTuition>
+      },
+      {
+        path: "be-a-tutor",
+        element: <BeATutor></BeATutor>
       }
       
     ],
@@ -83,6 +91,22 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: 'dashboard',
+    element: <PrivateRoute>
+      <DashboardLayout></DashboardLayout>
+    </PrivateRoute>,
+    children: [
+      {
+        path: 'my-tuitions',
+        element: <MyTuitions></MyTuitions>
+      }
+    ]
+  }
+
+
+
 ]);
 
 
