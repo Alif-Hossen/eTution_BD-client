@@ -1,11 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
 import { HiOutlineHome, HiOutlineUserGroup, HiOutlineBookOpen, HiOutlineCog, HiMenuAlt2 } from "react-icons/hi";
+import { FaChalkboardTeacher } from "react-icons/fa";
+
 
 const DashboardLayout = () => {
     return (
         <div className="drawer lg:drawer-open bg-slate-50 dark:bg-[#020617] min-h-screen">
             <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-            
+
             {/* Main Content */}
             <div className="drawer-content flex flex-col">
                 {/* Dashboard Navbar */}
@@ -42,7 +44,7 @@ const DashboardLayout = () => {
             {/* Sidebar Section */}
             <div className="drawer-side z-20">
                 <label htmlFor="dashboard-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                
+
                 <aside className="flex flex-col min-h-full w-72 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800">
                     {/* Logo Area */}
                     <div className="p-8 flex items-center gap-3">
@@ -75,14 +77,21 @@ const DashboardLayout = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/dashboard/approve-tutors" className="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all group">
+                                <FaChalkboardTeacher
+                                    className="text-xl group-hover:text-[#BCE955]" />
+                                <span className="font-semibold">Approve Tutors</span>
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/dashboard/students" className="flex items-center gap-4 px-4 py-3 rounded-2xl transition-all group">
                                 <HiOutlineUserGroup className="text-xl group-hover:text-[#BCE955]" />
                                 <span className="font-semibold">Manage Students</span>
                             </Link>
                         </li>
-                        
+
                         <div className="divider opacity-10"></div>
-                        
+
                         <li className="menu-title text-slate-400 dark:text-slate-500 font-bold uppercase text-[10px] tracking-[0.2em] mb-2 px-4">
                             Preferences
                         </li>

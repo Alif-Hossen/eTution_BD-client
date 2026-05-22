@@ -18,6 +18,7 @@ import PostTuitionForm from "../Pages/PostTuition/PostTuition";
 import PostTuition from "../Pages/PostTuition/PostTuition";
 import MyTuitions from "../Pages/Dashboard/MyTuition/MyTuitions";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import ApproveTutor from "../Pages/Dashboard/ApproveTutor/ApproveTutor";
 
 
 const router = createBrowserRouter([
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
       {
         path: 'my-tuitions',
         element: <MyTuitions></MyTuitions>
+      },
+      {
+        path: 'approve-tutors',
+        element: <ApproveTutor></ApproveTutor>
       }
     ]
   }
