@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import loginImg from "../../../assets/loginImg.png";
 import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router';
+import { Navigate, NavLink } from 'react-router';
 import { FcGoogle } from 'react-icons/fc';
 import { User, GraduationCap } from 'lucide-react';
 import UseAuth from '../../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
+import UseAxiosSecure from '../../../Hooks/UseAxiosSecure';
 
 
 
@@ -34,6 +35,9 @@ const RoleCard = ({
 const Register = () => {
     const [role, setRole] = useState('Student');
     const { registerUser } = UseAuth();
+    const axiosSecure = UseAxiosSecure();
+    // const navigate = navigate();
+    // const location = useLocation();
 
 
 
@@ -58,6 +62,26 @@ const Register = () => {
         registerUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
+                
+                // CREATE USER IN DATABASE -->
+
+                const userInfo = {
+                    email: data.email,
+                    name: data.name,
+                    phone: data.phone,
+                    role: role,
+                }
+
+                axiosSecure.post("/users", userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            console.log("User Created In Database: ", res.data);
+                        }
+                    })
+                    .catch(error => {
+                        console.log("Error Creating User In Database: ", error);
+                    })
+
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -87,6 +111,26 @@ const Register = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user);
+
+                // CREATE USER IN DATABASE -->
+
+                const userInfo = {
+                    email: result.user.email,
+                    name: result.user.displayName,
+                    phone: result.user.phoneNumber || "N/A",
+                    role: role,
+                }
+
+                axiosSecure.post("/users", userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            console.log("User Created In Database: ", res.data);
+                        }
+                    })
+                    .catch(error => {
+                        console.log("Error Creating User In Database: ", error);
+                    });
+
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -96,6 +140,7 @@ const Register = () => {
                     toast: true,
                 });
             })
+            
             .catch(error => {
                 console.error("Google Sign-In Error:", error);
             });

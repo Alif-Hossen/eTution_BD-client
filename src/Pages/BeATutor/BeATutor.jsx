@@ -1,21 +1,37 @@
 import { useForm } from 'react-hook-form';
 import postTuitionImg from "../../assets/BeATutor.png";
 import UseAuth from '../../Hooks/UseAuth';
+import UseAxiosSecure from '../../Hooks/UseAxiosSecure';
+import Swal from 'sweetalert2';
 
 const BeATutor = () => {
     // const { user } = UseAuth(); 
-    
+
+    const axiosSecure = UseAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
         console.log("Submitting Tutor Data:", data);
         reset();
+
+        axiosSecure.post('/tutors', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        title: 'Tuition Posted Successfully!',
+                        text: 'Your Tutor Application has been submitted. We will notify you soon.',
+                        background: '#1e293b',
+                        color: '#fff',
+                    });
+                }
+            })
+
     };
 
     return (
         <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-white dark:bg-[#020617]">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-6xl w-full">
-                
+
                 <div className="w-full lg:w-1/2 flex justify-center">
                     <div className="w-full max-w-[300px] md:max-w-[400px] lg:max-w-[550px]  flex items-center justify-center  dark:border-slate-700">
                         <img src={postTuitionImg} alt="Be a Tutor" />
@@ -35,7 +51,7 @@ const BeATutor = () => {
                                     <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Full Name</label>
                                     <input
                                         type="text"
-                                        // ২. এখানে register যোগ করতে হবে
+
                                         {...register("name", { required: true })}
                                         placeholder="Enter your name"
                                         className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-[#BCE955] text-slate-800 dark:text-white outline-none text-sm font-medium transition-all"
@@ -45,7 +61,7 @@ const BeATutor = () => {
                                     <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Email Address</label>
                                     <input
                                         type="email"
-                                        // ৩. এখানেও register যোগ করতে হবে
+
                                         {...register("email", { required: true })}
                                         placeholder="Enter your email"
                                         className="w-full px-5 py-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-[#BCE955] text-slate-800 dark:text-white outline-none text-sm font-medium transition-all"
