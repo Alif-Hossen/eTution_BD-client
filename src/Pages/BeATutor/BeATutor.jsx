@@ -29,7 +29,7 @@ const BeATutor = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center px-4 py-10 bg-white dark:bg-[#020617]">
+        <div className="min-h-screen flex items-center justify-center px-4 py-10 max-w-[1400px] mx-auto rounded-2xl bg-white dark:bg-[#020617]">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10 max-w-6xl w-full">
 
                 <div className="w-full lg:w-1/2 flex justify-center">
